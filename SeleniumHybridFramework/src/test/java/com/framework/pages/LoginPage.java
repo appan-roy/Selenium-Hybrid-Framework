@@ -14,7 +14,7 @@ public class LoginPage {
 		
 	}
 	
-//	STORING THE WEBELEMENTS OF LOGIN PAGE FOR PAGE OBJECT MODEL
+//	STORING THE WEBELEMENTS OF LOGIN PAGE FOR PAGE OBJECT MODEL //
 	
 	@FindBy(id="txtUsername") WebElement uid;
 	
