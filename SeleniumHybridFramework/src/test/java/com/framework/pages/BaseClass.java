@@ -46,29 +46,29 @@ public class BaseClass {
 	}
 	
 //	THIS IS WITHOUT MAVEN PARAMETER PASS
-	@BeforeClass
-	public void test_setup(){
-		
-		Reporter.log("Trying to start browser and getting application ready", true);
-		
-		driver = BrowserFactory.startApplication(driver, config.getBrowser(), config.getStagingURL());
-		
-		Reporter.log("Application is up and running", true);
-		
-	}
-	
-//	THIS IS WITH MAVEN PARAMETER PASS
-//	@Parameters({"browser", "testURL"})
 //	@BeforeClass
-//	public void test_setup(String browser, String url){
+//	public void test_setup(){
 //		
 //		Reporter.log("Trying to start browser and getting application ready", true);
 //		
-//		driver = BrowserFactory.startApplication(driver, browser, url);
+//		driver = BrowserFactory.startApplication(driver, config.getBrowser(), config.getStagingURL());
 //		
 //		Reporter.log("Application is up and running", true);
 //		
 //	}
+	
+//	THIS IS WITH MAVEN PARAMETER PASS
+	@Parameters({"browser", "testURL"})
+	@BeforeClass
+	public void test_setup(String browser, String url){
+		
+		Reporter.log("Trying to start browser and getting application ready", true);
+		
+		driver = BrowserFactory.startApplication(driver, browser, url);
+		
+		Reporter.log("Application is up and running", true);
+		
+	}
 	
 	@AfterClass
 	public void test_teardown(){
